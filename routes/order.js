@@ -8,7 +8,7 @@ router.use(cors({
 }))
 
 
-router.post("/orders/:user_id/:service_level/:date/:time",controller.uploadOrder)
+router.post("/orders/:user_id/:service_level/:date/:time/:ordered_at",controller.uploadOrder)
 
 
 module.exports = router

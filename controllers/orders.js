@@ -8,13 +8,14 @@ const uploadOrder = (req,res)=>{
    let level = req.params.service_level
    let date = req.params.date
    let time = req.params.time
+   let orderedAt = req.params.ordered_at
 
    let id = parseInt(userID)
    let levelNumber = parseInt(level)
    console.log(id,levelNumber)
 
-   let sql = ("INSERT INTO orders VALUES (DEFAULT,?,?,?,?)")
-   sql = mysql.format(sql,[id,levelNumber,date,time]) 
+   let sql = ("INSERT INTO orders VALUES (DEFAULT,?,?,?,?,?)")
+   sql = mysql.format(sql,[id,levelNumber,date,time,orderedAt]) 
 
   pool.query(sql,(err,results)=>{
     return res.json(results)

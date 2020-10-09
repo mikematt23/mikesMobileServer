@@ -11,7 +11,7 @@ router.get('/email/:email',controller.getUser)
 
 router.get('/users',controller.getUsers)
 
-router.post('/createCustomer/:firstName/:lastName/:email/:password',controller.createUser)
+router.post('/createCustomer/:firstName/:lastName/:email/:password/:address/:town/:state/:date',controller.createUser)
 
 
 module.exports = router

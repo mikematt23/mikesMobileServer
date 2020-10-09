@@ -28,9 +28,13 @@ let createUser = (req,res)=>{
   let firstName = req.params.firstName
   let lastName = req.params.lastName
   let password = req.params.password
+  let address = req.params.address
+  let town = req.params.town
+  let state = req.params.state
+  let date = req.params.date
   
-  let sql = ('INSERT INTO user Values(DEFAULT,?,?,?,?)')
-  sql = mysql.format(sql,[firstName,lastName,email,password])
+  let sql = ('INSERT INTO users Values(DEFAULT,?,?,?,?,?,?,?,?)')
+  sql = mysql.format(sql,[firstName,lastName,email,password,address,town,state,date])
 
   pool.query(sql,(err,results)=>{
     return res.json(results)
