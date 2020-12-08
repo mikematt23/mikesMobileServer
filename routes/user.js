@@ -4,7 +4,7 @@ const controller = require('../controllers/user')
 const cors = require('cors')
 
 router.use(cors({
-  origin: 'http://localhost:3000'
+  origin: 'http://localhost:4000'
 }))
 
 router.get('/email/:email',controller.getUser)
@@ -12,6 +12,10 @@ router.get('/email/:email',controller.getUser)
 router.get('/users',controller.getUsers)
 
 router.post('/createCustomer/:firstName/:lastName/:email/:password/:address/:town/:state/:date',controller.createUser)
+
+router.put('/updatePassword/:userID/:newPassword',controller.updatePassword)
+
+router.put('/updateAddress/:userID/:address/:town/:state',controller.updateAddress)
 
 
 module.exports = router
